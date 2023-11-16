@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     fetchCustomers(),
   ]);
 
-  if (!invoice) {
+  if (!invoice || !Array.isArray(customers)) {
     notFound();
   }
   return (
